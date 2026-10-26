@@ -1,0 +1,18 @@
+Build the following practical page using HTML and CSS. Reuse the CSS concepts learned on earlier days. The assignment should be functional and visually organized, not just a collection of isolated examples.
+• Use the Day 1–2 HTML course content as the base and rebuild the layout with modern CSS.
+• Create a responsive header/navigation using Flexbox.
+• Create a hero section with a responsive two-column layout.
+• Create a course-card section using CSS Grid.
+• Use repeat(), minmax(), auto-fit or auto-fill to make the card grid responsive.
+• Create a lesson layout with a main content area and a sidebar.
+• Use gap instead of unnecessary margin hacks where appropriate.
+• Create responsive typography using rem and clamp().
+• Add responsive breakpoints using a mobile-first approach.
+• Make images responsive and use object-fit and aspect-ratio where appropriate.
+• Add hover and focus effects to cards, links, and buttons.
+• Use transition and transform for at least three interactive elements.
+• Create a responsive pricing or course-summary table/card area.
+• Use :focus-visible for keyboard-friendly focus styling.
+• Add a responsive footer with multiple columns.
+• Test the page at mobile, tablet, and desktop widths using browser DevTools.
+• Do not use JavaScript for layout or responsive behavior.

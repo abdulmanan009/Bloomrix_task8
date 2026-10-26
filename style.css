@@ -1,0 +1,367 @@
+/* 
+   Mobile-First Approach:
+   Base styles are for mobile. We will use @media (min-width: ...) for tablets and desktops.
+*/
+
+/* CSS Reset & Global Variables */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #3498db;
+    --dark-color: #2c3e50;
+    --light-bg: #f8f9fa;
+    --text-color: #333;
+    --font-main: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+}
+
+/* 
+   Responsive Typography using rem and clamp()
+*/
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+p { font-size: 1rem; margin-bottom: 1rem; }
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Buttons & Interactive Elements */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--dark-color);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+/* Hover and Focus effects */
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Accessibility: focus-visible */
+.btn:focus-visible,
+a:focus-visible {
+    outline: 3px solid orange;
+    outline-offset: 2px;
+}
+
+/* 
+   1. Flexbox Header 
+   Mobile: stacked. Desktop: row.
+*/
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* 
+   2. Hero Section 
+   Mobile: Stacked. Desktop: 2 columns.
+*/
+.hero {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* 
+   Image aspect-ratio and object-fit 
+*/
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* 
+   3. CSS Grid Course Cards 
+   Using repeat(), minmax(), and auto-fit
+*/
+.courses-section {
+    padding: 2rem 1rem;
+    background-color: white;
+}
+
+.course-grid {
+    display: grid;
+    /* This single line makes it fully responsive */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.course-card {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.course-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.course-card p {
+    margin-bottom: 1.5rem;
+}
+
+/* 
+   4. Lesson Layout (Main + Sidebar) 
+*/
+.lesson-layout {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.lesson-main {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.lesson-sidebar {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.lesson-sidebar a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.lesson-sidebar a:hover {
+    color: white;
+}
+
+.lesson-sidebar ul {
+    list-style: none;
+}
+
+.lesson-sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+/* 
+   5. Pricing Grid 
+*/
+.pricing-section {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pricing-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark-color);
+    margin: 1rem 0;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+
+.pricing-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* 
+   6. Responsive Footer 
+*/
+.site-footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 2rem 1rem 1rem;
+}
+
+.footer-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #34495e;
+    color: #bdc3c7;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (Mobile-First)
+   ========================================================================== */
+
+/* Tablet View (768px and up) */
+@media (min-width: 768px) {
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        padding: 4rem 2rem;
+    }
+
+    .hero-content, .hero-image {
+        flex: 1;
+    }
+
+    .lesson-layout {
+        flex-direction: row;
+        padding: 3rem 2rem;
+    }
+
+    .lesson-main {
+        flex: 3;
+    }
+
+    .lesson-sidebar {
+        flex: 1;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 2rem auto 0;
+    }
+
+    .footer-columns {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .footer-col {
+        flex: 1;
+    }
+}
+
+/* Desktop View (1024px and up) */
+@media (min-width: 1024px) {
+    .hero, .courses-section, .lesson-layout, .pricing-section {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
