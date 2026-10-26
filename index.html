@@ -8,125 +8,137 @@
 </head>
 <body>
 
-    <!-- 1. Responsive Header/Nav using Flexbox -->
+    <!-- Header with container -->
     <header class="site-header">
-        <div class="logo">HTML Masterclass</div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#lesson">Lesson</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <div class="logo">HTML Masterclass</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#lesson">Lesson</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <!-- 2. Hero Section with responsive two-column layout -->
+        <!-- Hero Section -->
         <section id="hero" class="hero">
-            <div class="hero-content">
-                <h1>Build the Web from Scratch</h1>
-                <p>Learn modern HTML and CSS layout techniques. No JavaScript required for layout.</p>
-                <a href="#courses" class="btn btn-primary">Explore Courses</a>
-            </div>
-            <div class="hero-image">
-                <!-- Using aspect-ratio and object-fit -->
-                <img src="https://picsum.photos/600/400" alt="Coding on a laptop">
-            </div>
-        </section>
-
-        <!-- 3. Course-card Section using CSS Grid -->
-        <section id="courses" class="courses-section">
-            <h2>Our Courses</h2>
-            <div class="course-grid">
-                
-                <article class="course-card">
-                    <h3>HTML Basics</h3>
-                    <p>Learn the structure of the web.</p>
-                    <button class="btn">View Course</button>
-                </article>
-
-                <article class="course-card">
-                    <h3>CSS Layouts</h3>
-                    <p>Master Flexbox and CSS Grid.</p>
-                    <button class="btn">View Course</button>
-                </article>
-
-                <article class="course-card">
-                    <h3>Responsive Design</h3>
-                    <p>Build for mobile, tablet, and desktop.</p>
-                    <button class="btn">View Course</button>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- 4. Lesson Layout (Main + Sidebar) -->
-        <section id="lesson" class="lesson-layout">
-            <article class="lesson-main">
-                <h2>Lesson 1: The Box Model</h2>
-                <p>Every element in CSS is a box. In this lesson, we explore how padding, borders, and margins interact to create layouts.</p>
-                <p>Using modern CSS, we can use <code>box-sizing: border-box</code> to make our lives much easier.</p>
-            </article>
-            
-            <aside class="lesson-sidebar">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Cheat Sheet</a></li>
-                    <li><a href="#">Practice Files</a></li>
-                    <li><a href="#">Code Editor Setup</a></li>
-                </ul>
-            </aside>
-        </section>
-
-        <!-- 5. Pricing / Summary Area -->
-        <section id="pricing" class="pricing-section">
-            <h2>Course Pricing</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Basic</h3>
-                    <p class="price">$49</p>
-                    <ul>
-                        <li>Access to HTML lessons</li>
-                        <li>Community support</li>
-                    </ul>
-                    <button class="btn">Choose Basic</button>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Build the Web from Scratch</h1>
+                    <p>Learn modern HTML and CSS layout techniques. No JavaScript required for layout.</p>
+                    <a href="#courses" class="btn btn-primary">Explore Courses</a>
                 </div>
-                <div class="pricing-card featured">
-                    <h3>Pro</h3>
-                    <p class="price">$99</p>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/600/400" alt="Coding on a laptop">
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Section (Background spans full width, container keeps content centered) -->
+        <section id="courses" class="courses-section">
+            <div class="container">
+                <h2>Our Courses</h2>
+                <div class="course-grid">
+                    
+                    <article class="course-card">
+                        <h3>HTML Basics</h3>
+                        <p>Learn the structure of the web.</p>
+                        <button class="btn">View Course</button>
+                    </article>
+
+                    <article class="course-card">
+                        <h3>CSS Layouts</h3>
+                        <p>Master Flexbox and CSS Grid.</p>
+                        <button class="btn">View Course</button>
+                    </article>
+
+                    <article class="course-card">
+                        <h3>Responsive Design</h3>
+                        <p>Build for mobile, tablet, and desktop.</p>
+                        <button class="btn">View Course</button>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Lesson Layout -->
+        <section id="lesson" class="lesson-layout">
+            <div class="container lesson-container">
+                <article class="lesson-main">
+                    <h2>Lesson 1: The Box Model</h2>
+                    <p>Every element in CSS is a box. In this lesson, we explore how padding, borders, and margins interact to create layouts.</p>
+                    <p>Using modern CSS, we can use <code>box-sizing: border-box</code> to make our lives much easier.</p>
+                </article>
+                
+                <aside class="lesson-sidebar">
+                    <h3>Resources</h3>
                     <ul>
-                        <li>All HTML & CSS lessons</li>
-                        <li>1-on-1 mentoring</li>
-                        <li>Certificate of completion</li>
+                        <!-- Added transform target -->
+                        <li><a href="#hero">Cheat Sheet</a></li>
+                        <li><a href="#hero">Practice Files</a></li>
+                        <li><a href="#hero">Code Editor Setup</a></li>
                     </ul>
-                    <button class="btn btn-primary">Choose Pro</button>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Pricing Area -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <h2>Course Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Basic</h3>
+                        <p class="price">$49</p>
+                        <ul>
+                            <li>Access to HTML lessons</li>
+                            <li>Community support</li>
+                        </ul>
+                        <button class="btn">Choose Basic</button>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h3>Pro</h3>
+                        <p class="price">$99</p>
+                        <ul>
+                            <li>All HTML & CSS lessons</li>
+                            <li>1-on-1 mentoring</li>
+                            <li>Certificate of completion</li>
+                        </ul>
+                        <button class="btn btn-primary">Choose Pro</button>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 6. Responsive Footer with multiple columns -->
+    <!-- Footer with container -->
     <footer class="site-footer">
-        <div class="footer-columns">
-            <div class="footer-col">
-                <h4>About Us</h4>
-                <p>Providing top-tier web development education.</p>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>Providing top-tier web development education.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Email: info@example.com</p>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HTML Masterclass. All rights reserved.</p>
             </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Email: info@example.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 HTML Masterclass. All rights reserved.</p>
         </div>
     </footer>
 
