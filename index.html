@@ -3,85 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern HTML & CSS Course</title>
+    <title>HTML Masterclass - Modern Layout</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header with container -->
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">HTML Masterclass</div>
-            <nav class="main-nav">
+            <nav class="main-nav" aria-label="Main navigation">
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#lesson">Lesson</a></li>
+                    <li><a href="#courses">Lessons</a></li>
+                    <li><a href="#lesson">Content</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1>Build the Web from Scratch</h1>
-                    <p>Learn modern HTML and CSS layout techniques. No JavaScript required for layout.</p>
-                    <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                    <h1>Learn HTML Basics & Forms</h1>
+                    <p>Rebuilding the Day 1 and Day 2 course material using modern CSS layout techniques like Flexbox and Grid.</p>
+                    <a href="#courses" class="btn btn-primary">View Lessons</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://picsum.photos/600/400" alt="Coding on a laptop">
+                    <img src="https://picsum.photos/600/400" alt="Learning HTML" width="600" height="400">
                 </div>
             </div>
         </section>
 
-        <!-- Course Section (Background spans full width, container keeps content centered) -->
+        <!-- Course / Lesson Cards -->
         <section id="courses" class="courses-section">
             <div class="container">
-                <h2>Our Courses</h2>
+                <h2>Course Modules</h2>
                 <div class="course-grid">
                     
-                    <article class="course-card">
-                        <h3>HTML Basics</h3>
-                        <p>Learn the structure of the web.</p>
-                        <button class="btn">View Course</button>
+                    <article class="card">
+                        <h3>Day 1: HTML Basics</h3>
+                        <p>Learn the structure of the web, headings, paragraphs, and semantic tags.</p>
+                        <a href="#lesson" class="btn">Start Module</a>
                     </article>
 
-                    <article class="course-card">
-                        <h3>CSS Layouts</h3>
-                        <p>Master Flexbox and CSS Grid.</p>
-                        <button class="btn">View Course</button>
+                    <article class="card">
+                        <h3>Day 2: Forms & Tables</h3>
+                        <p>Master user input with forms, validation, and organize data with tables.</p>
+                        <a href="#lesson" class="btn">Start Module</a>
                     </article>
 
-                    <article class="course-card">
-                        <h3>Responsive Design</h3>
-                        <p>Build for mobile, tablet, and desktop.</p>
-                        <button class="btn">View Course</button>
+                    <article class="card">
+                        <h3>Modern Layouts</h3>
+                        <p>Apply CSS Grid and Flexbox to make your HTML layout responsive.</p>
+                        <a href="#lesson" class="btn">Start Module</a>
                     </article>
 
                 </div>
             </div>
         </section>
 
-        <!-- Lesson Layout -->
+        <!-- Lesson Layout (Main + Sidebar) -->
         <section id="lesson" class="lesson-layout">
             <div class="container lesson-container">
                 <article class="lesson-main">
-                    <h2>Lesson 1: The Box Model</h2>
-                    <p>Every element in CSS is a box. In this lesson, we explore how padding, borders, and margins interact to create layouts.</p>
-                    <p>Using modern CSS, we can use <code>box-sizing: border-box</code> to make our lives much easier.</p>
+                    <h2>Lesson Details: The Box Model</h2>
+                    <p>In Day 1, we learned that HTML elements are essentially boxes. CSS allows us to control the padding, border, and margin of these boxes to create structured layouts.</p>
+                    <p>In Day 2, we learned how to use forms to collect data and tables to display it. By combining these concepts, we can build complex, interactive web pages.</p>
                 </article>
                 
                 <aside class="lesson-sidebar">
-                    <h3>Resources</h3>
+                    <h3>Course Resources</h3>
                     <ul>
-                        <!-- Added transform target -->
-                        <li><a href="#hero">Cheat Sheet</a></li>
-                        <li><a href="#hero">Practice Files</a></li>
-                        <li><a href="#hero">Code Editor Setup</a></li>
+                        <li><a href="#hero">HTML Cheat Sheet</a></li>
+                        <li><a href="#hero">Form Validation Guide</a></li>
+                        <li><a href="#hero">CSS Grid Examples</a></li>
                     </ul>
                 </aside>
             </div>
@@ -92,47 +93,48 @@
             <div class="container">
                 <h2>Course Pricing</h2>
                 <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Basic</h3>
+                    <div class="card pricing-card">
+                        <h3>Basic Access</h3>
                         <p class="price">$49</p>
                         <ul>
-                            <li>Access to HTML lessons</li>
-                            <li>Community support</li>
+                            <li>Day 1 & 2 HTML Content</li>
+                            <li>Community Support</li>
                         </ul>
-                        <button class="btn">Choose Basic</button>
+                        <a href="#hero" class="btn">Choose Basic</a>
                     </div>
-                    <div class="pricing-card featured">
-                        <h3>Pro</h3>
+                    
+                    <div class="card pricing-card featured">
+                        <h3>Pro Access</h3>
                         <p class="price">$99</p>
                         <ul>
-                            <li>All HTML & CSS lessons</li>
-                            <li>1-on-1 mentoring</li>
-                            <li>Certificate of completion</li>
+                            <li>All HTML & CSS Lessons</li>
+                            <li>1-on-1 Mentoring</li>
+                            <li>Certificate</li>
                         </ul>
-                        <button class="btn btn-primary">Choose Pro</button>
+                        <a href="#hero" class="btn btn-primary">Choose Pro</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer with container -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-columns">
                 <div class="footer-col">
-                    <h4>About Us</h4>
-                    <p>Providing top-tier web development education.</p>
+                    <h3>About the Course</h3>
+                    <p>Providing top-tier web development education based on standard HTML and CSS practices.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#hero">Home</a></li>
-                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#courses">Lessons</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h3>Contact</h3>
                     <p>Email: info@example.com</p>
                 </div>
             </div>
